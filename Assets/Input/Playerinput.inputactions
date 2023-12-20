@@ -1,14 +1,14 @@
 {
-    "name": "Playerinput",
+    "name": "PlayerInput",
     "maps": [
         {
             "name": "OnFoot",
-            "id": "acb918fc-1573-4210-b22c-8a08f7a099bc",
+            "id": "50beaffb-c1f3-41b2-9274-562d3f4d8911",
             "actions": [
                 {
-                    "name": "Movment",
+                    "name": "Movement",
                     "type": "Value",
-                    "id": "f7b9ca52-ee96-4bce-9919-cb28ad284a2c",
+                    "id": "c2d7687f-3972-49d6-8e29-d236672dacb1",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -17,7 +17,34 @@
                 {
                     "name": "Jump",
                     "type": "Button",
-                    "id": "70f73081-6575-4fee-bfd2-0771e7b5762a",
+                    "id": "35b024f9-22db-46f9-a5d9-7c1a975d6c1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Look",
+                    "type": "Value",
+                    "id": "15e098f3-8865-465a-b44b-908dcdc84c23",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Crounch",
+                    "type": "Button",
+                    "id": "9bbab49b-a17a-4bb4-adbd-8905ea2a53cc",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Sprint",
+                    "type": "Button",
+                    "id": "9fe5400a-9c20-42bd-b50b-b44b4b73a221",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -27,67 +54,100 @@
             "bindings": [
                 {
                     "name": "WASD",
-                    "id": "97a93773-da5a-4b1a-b5cb-940ef48ce3d8",
+                    "id": "74777f54-3119-4955-b9dd-6099f62750d5",
                     "path": "2DVector",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movment",
+                    "action": "Movement",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "up",
-                    "id": "783854b0-b3ff-4d37-8702-8a96aa87c782",
+                    "id": "c964f872-e377-479c-bd3d-ceaac9833cd2",
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movment",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "down",
-                    "id": "d420a213-191d-4c15-a433-52d17fab534f",
+                    "id": "5d3e6fa1-5977-4d89-a752-9ed04138a771",
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movment",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "left",
-                    "id": "c853d605-a74f-4d8b-b1c4-1de9b6cdc69b",
+                    "id": "0c802661-b462-47b9-abdf-6aa5d355c197",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movment",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "right",
-                    "id": "1eca7541-671c-483a-b8cc-fca2f42903b7",
+                    "id": "faf05cd6-a552-487a-826c-17b136510fc9",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Movment",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
                 {
                     "name": "",
-                    "id": "58b52db2-c665-4d9d-a526-b8e7fc159e3d",
+                    "id": "a643f31c-25ec-4d19-becd-b23bc470c09e",
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4c0a82c1-d63f-48f3-bb2c-76ae7f957887",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "6e95fd3c-55e3-4826-9852-e0ff8515679f",
+                    "path": "<Keyboard>/leftCtrl",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crounch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "90036878-5e67-4dcb-b6ea-c2c1bc5cb16e",
+                    "path": "<Keyboard>/leftShift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
