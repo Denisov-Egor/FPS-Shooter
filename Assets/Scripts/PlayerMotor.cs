@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
 {
-    // Start is called before the first frame update
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool isGrounded;
@@ -14,20 +13,19 @@ public class PlayerMotor : MonoBehaviour
     public float speed = 1.5f;
     public float gravity = -9.8f;
     public float junpHeight = 3f;
-     public float crouchTimer = 100f;
-    private float crouchingTimer;
+    /*public float crouchTimer = 1f;
+    private float crouchingTimer = 0f;*/
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         isGrounded = controller.isGrounded;
 
-      if (lerpCrouch)
+      /*if (lerpCrouch)
         {
             crouchingTimer += Time.deltaTime;
             float p = crouchTimer / 1;
@@ -42,10 +40,9 @@ public class PlayerMotor : MonoBehaviour
                 lerpCrouch = false;
                 crouchTimer = 0f;
             }
-        }
+        }*/
     }
 
-// Basically this recieves input from InputManager.cs and apply them to our character controller
     public void ProcessMove(Vector2 input){
         Vector3 moveDirection = Vector3.zero;
         moveDirection.x = input.x;
@@ -53,7 +50,9 @@ public class PlayerMotor : MonoBehaviour
         controller.Move(transform.TransformDirection(moveDirection) * speed * Time.deltaTime);
         playerVelocity.y += gravity * Time.deltaTime;
         if (isGrounded && playerVelocity.y < 0)
+        {
             playerVelocity.y = -2;
+        }
         controller.Move(playerVelocity * Time.deltaTime);
     }
 
@@ -65,12 +64,12 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 
-    public void Crounch()
+    /*public void Crounch()
     {
         crouching = !crouching;
         crouchTimer = 0;
         lerpCrouch = true;
-    }
+    }*/
 
     public void Sprint()
     {
