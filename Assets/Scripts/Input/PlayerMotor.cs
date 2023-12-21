@@ -13,8 +13,8 @@ public class PlayerMotor : MonoBehaviour
     public float speed = 1.5f;
     public float gravity = -9.8f;
     public float junpHeight = 3f;
-    /*public float crouchTimer = 1f;
-    private float crouchingTimer = 0f;*/
+    public float crouchTimer = 1f;
+    private float crouchingTimer = 0f;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class PlayerMotor : MonoBehaviour
     {
         isGrounded = controller.isGrounded;
 
-      /*if (lerpCrouch)
+        if (lerpCrouch)
         {
             crouchingTimer += Time.deltaTime;
             float p = crouchTimer / 1;
@@ -40,7 +40,7 @@ public class PlayerMotor : MonoBehaviour
                 lerpCrouch = false;
                 crouchTimer = 0f;
             }
-        }*/
+        }
     }
 
     public void ProcessMove(Vector2 input){
@@ -64,12 +64,12 @@ public class PlayerMotor : MonoBehaviour
         }
     }
 
-    /*public void Crounch()
+    public void Crounch()
     {
         crouching = !crouching;
         crouchTimer = 0;
         lerpCrouch = true;
-    }*/
+    }
 
     public void Sprint()
     {

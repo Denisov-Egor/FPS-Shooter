@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-
 public class InputManager : MonoBehaviour
 {
     private PlayerInput playerInput;
-    private PlayerInput.OnFootActions onFoot; 
+    public PlayerInput.OnFootActions onFoot;
     private PlayerMotor motor;
     private PlayerLook look;
+    // Start is called before the first frame update
     void Awake()
     {
         playerInput = new PlayerInput();
@@ -19,26 +20,27 @@ public class InputManager : MonoBehaviour
 
         onFoot.Jump.performed += ctx => motor.Jump();
 
-        //onFoot.Crounch.performed += ctx => motor.Crounch();
+        //onFoot.Crouch.performed += ctx => motor.Crouch();
         onFoot.Sprint.performed += ctx => motor.Sprint();
     }
 
+    // Update is called once per frame
     void FixedUpdate()
     {
+        //tell the player motor to move using the vvalue from our movement action
         motor.ProcessMove(onFoot.Movement.ReadValue<Vector2>());
     }
-
     private void LateUpdate()
     {
         look.ProcessLook(onFoot.Look.ReadValue<Vector2>());
     }
-
     private void OnEnable()
     {
-        onFoot.Enable();
+    onFoot.Enable();
     }
     private void OnDisable()
     {
         onFoot.Disable();
     }
 }
+
